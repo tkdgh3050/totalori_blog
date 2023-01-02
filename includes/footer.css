@@ -1,0 +1,16 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .footer__icons i {
+  padding: calc(var(--padding) / 2);
+  font-size: min(4vw, var(--large-font));
+}
+
+footer .footer__info .info__links {
+  display: flex;
+  justify-content: space-evenly;
+  padding: calc(var(--padding) / 2);
+}
