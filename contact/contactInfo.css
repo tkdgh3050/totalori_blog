@@ -1,0 +1,14 @@
+@import url(/includes/root.css);
+@import url(/includes/header.css);
+@import url(/includes/footer.css);
+@import url(/includes/pageDescription.css);
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding);
+}
+
+main .main__links .main_link__list a:hover {
+  color: var(--pink-color);
+}
