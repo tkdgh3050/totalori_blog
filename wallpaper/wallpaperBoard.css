@@ -1,0 +1,58 @@
+@import url(/includes/root.css);
+@import url(/includes/header.css);
+@import url(/includes/footer.css);
+@import url(/includes/pageDescription.css);
+
+main .wallpaper__container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--padding);
+}
+
+main .wallpaper__container .wallpaper__item {
+  width: calc(33vw - var(--padding) * 1.9);
+  border: 1px solid var(--grey-light-color);
+  box-shadow: 0 2px 4px 0 var(--grey-dark-color);
+  margin: calc(var(--padding) / 2);
+}
+
+main .wallpaper__container .wallpaper__item:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 var(--grey-dark-color);
+}
+
+main .wallpaper__container .wallpaper__item .post__image__preview img {
+  width: 100%;
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+main .wallpaper__container .wallpaper__item .post__content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 calc(var(--padding) / 2);
+}
+
+main .wallpaper__container .wallpaper__item .post__content .post__title {
+  font-size: min(3vw, var(--medium-font));
+}
+
+main .wallpaper__container .wallpaper__item .post__content .post__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+main .wallpaper__container .wallpaper__item .post__content .post__info .post_date {
+  font-size: min(2.5vw, var(--small-font));
+  color: var(--grey-dark-color);
+}
+
+main .wallpaper__container .wallpaper__item .post__content .post__info .post__views {
+  font-size: min(2.5vw, var(--small-font));
+  color: var(--grey-dark-color);
+}
+
+@media screen and (max-width: 768px) {
+  main .wallpaper__container .wallpaper__item {
+    width: calc(50vw - var(--padding) * 2.5);
+  }
+}
