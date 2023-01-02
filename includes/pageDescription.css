@@ -1,0 +1,8 @@
+.page__description {
+  padding: var(--padding) var(--padding) 0;
+}
+
+.page__description .page__title {
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--grey-light-color);
+}
