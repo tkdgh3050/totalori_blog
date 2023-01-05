@@ -1,3 +1,8 @@
+import { firebaseConfig } from '/includes/firebase-config.js';
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+
 const $sideToggle = document.querySelector('header .header__icons .fa-bars');
 const $header__menu = document.querySelector('header .header__menu');
 const $menu__close = document.querySelector('header .header__menu .menu__close .fa-x');

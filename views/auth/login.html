@@ -11,7 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="login.css">
   <script src="https://kit.fontawesome.com/ba2b096987.js" crossorigin="anonymous"></script>
-  <script src="/includes/header.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js" defer></script>
+  <script type="module" src="/includes/header.js" defer></script>
   <script src="login.js" defer></script>
 </head>
 
@@ -42,8 +46,8 @@
     <h2 class="page__title">login</h2>
   </div>
   <main>
-    <form action="" id="form__login">
-      <input type="text" id="id__input" placeholder="아이디">
+    <form id="form__login">
+      <input type="email" id="email__input" placeholder="이메일">
       <input type="password" id="pw__input" placeholder="비밀번호">
       <button id="login__btn">로그인</button>
     </form>
