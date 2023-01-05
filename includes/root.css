@@ -30,13 +30,13 @@ body {
   font-family: "Noto Sans KR", sans-serif;
 }
 
-a {
+a:not(.editor__content *) {
   text-decoration: none;
   color: var(--black-color);
 }
 
-ul,
-ol {
+ul:not(.editor__content *),
+ol:not(.editor__content *) {
   list-style: none;
   padding: 0;
 }

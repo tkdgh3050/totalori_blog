@@ -1,0 +1,128 @@
+@import url(/includes/root.css);
+@import url(/includes/header.css);
+@import url(/includes/footer.css);
+@import url(/includes/pageDescription.css);
+
+main {
+  padding: var(--padding);
+  display: flex;
+  flex-direction: column;
+}
+
+main .wallpaper__title #title,
+main .wallpaper__preview__img #preview__img__filename,
+main .wallpaper__preview__img label {
+  width: 100%;
+  height: 30px;
+  font-size: var(--medium-font);
+  border: 1px solid var(--grey-dark-color);
+}
+
+main .wallpaper__texteditor {
+  border: 1px solid var(--grey-dark-color);
+  margin-top: calc(var(--padding) / 2);
+}
+
+main .wallpaper__texteditor .editor__header {
+  background-color: var(--grey-light-color);
+  padding: calc(var(--padding) / 2);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main .wallpaper__texteditor .editor__header .editor__btn {
+  border: 0;
+  cursor: pointer;
+  width: var(--large-font);
+  height: var(--large-font);
+  background-color: var(--grey-light-color);
+}
+
+main .wallpaper__texteditor .editor__header .editor__btn:hover {
+  color: var(--blue-color);
+}
+
+main .wallpaper__texteditor .editor__content {
+  outline: none;
+  padding: var(--padding);
+  min-height: 60vh;
+}
+
+main .wallpaper__texteditor .editor__content img {
+  max-width: 100%;
+}
+
+main .wallpaper__texteditor .editor__content.no__content {
+  color: var(--grey-dark-color);
+}
+
+main .wallpaper__preview__img {
+  padding-top: calc(var(--padding) / 2);
+  display: flex;
+}
+
+main .wallpaper__preview__img #preview__img__filename {
+  width: 100%;
+  outline: none;
+}
+
+main .wallpaper__preview__img label {
+  font-size: var(--small-font);
+  width: 100px;
+  background-color: var(--grey-light-color);
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: calc(var(--padding) / 2);
+  transition: background-color 0.1s;
+}
+
+main .wallpaper__preview__img label:hover {
+  background-color: var(--grey-dark-color);
+}
+
+main .wallpaper__preview__img #preview__img {
+  width: 0;
+  height: 0;
+}
+
+main .wallpaper__operator {
+  padding-top: calc(var(--padding) / 2);
+  display: flex;
+  justify-content: flex-end;
+}
+
+main .wallpaper__operator .operator__btn {
+  margin-left: calc(var(--padding) / 2);
+  height: 30px;
+  width: 60px;
+  font-size: var(--small-font);
+  background-color: var(--grey-light-color);
+  border: 1px solid var(--grey-dark-color);
+  transition: background-color 0.2s, color 0.2s;
+  font-weight: bold;
+}
+
+main .wallpaper__operator .operator__btn:hover {
+  background-color: var(--grey-dark-color);
+  color: var(--white-color);
+}
+
+main .wallpaper__operator .operator__btn#delete__wallpaper {
+  color: var(--red-color);
+}
+
+main .wallpaper__operator .operator__btn#register__wallpaper {
+  color: var(--blue-color);
+}
+
+main .wallpaper__operator .operator__btn#delete__wallpaper:hover {
+  background-color: var(--red-color);
+  color: var(--white-color);
+}
+
+main .wallpaper__operator .operator__btn#register__wallpaper:hover {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}

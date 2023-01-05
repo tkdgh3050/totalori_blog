@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TotalOri - 토끼 탈을 쓴 오리</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- TODO: 모든 html 웹폰트 url 변경해주기 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wallpaperEdit.css">
+  <script src="https://kit.fontawesome.com/ba2b096987.js" crossorigin="anonymous"></script>
+  <script src="/includes/header.js" defer></script>
+  <script src="wallpaperEdit.js" defer></script>
+</head>
+
+<body>
+  <!-- 헤더 네비게이션 바 -->
+  <header>
+    <!-- 로고 -->
+    <div class="header__logo">
+      <a href="/"><img src="/image/totalori_logo.png" alt="totalori logo" class="logo"></a>
+    </div>
+    <!-- 네비게이션 메뉴 -->
+    <ul class="header__menu">
+      <li class="menu__close"><i class="fa-solid fa-x"></i></li>
+      <li><a href="/wallpaper/wallpaperBoard.html">wallpaper</a></li>
+      <li><a href="/contact/contactInfo.html">contact</a></li>
+    </ul>
+    <!-- 우측 아이콘 -->
+    <div class="header__icons">
+      <a href="#">
+        <i class="fa-solid fa-user"></i>
+      </a>
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </header>
+
+  <div class="page__description">
+    <h2 class="page__title">wallpaper</h2>
+  </div>
+  <main>
+    <form id="wallpaper__form">
+      <div class="wallpaper__title">
+        <input type="text" id="title" name="title" placeholder="제목을 입력해 주세요.">
+      </div>
+      <div class="wallpaper__texteditor">
+        <div class="editor__header">
+          <button class="editor__btn" data-operation="bold">
+            <i class="fa-solid fa-bold"></i>
+          </button>
+          <button class="editor__btn" data-operation="italic">
+            <i class="fa-solid fa-italic"></i>
+          </button>
+          <button class="editor__btn" data-operation="underline">
+            <i class="fa-solid fa-underline"></i>
+          </button>
+          <button class="editor__btn" data-operation="insertUnorderedList">
+            <i class="fa-solid fa-list-ul"></i>
+          </button>
+          <button class="editor__btn" data-operation="insertOrderedList">
+            <i class="fa-solid fa-list-ol"></i>
+          </button>
+          <button class="editor__btn" data-operation="insertHorizontalRule">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <button class="editor__btn" data-operation="justifyLeft">
+            <i class="fa-solid fa-align-left"></i>
+          </button>
+          <button class="editor__btn" data-operation="justifyCenter">
+            <i class="fa-solid fa-align-center"></i>
+          </button>
+          <button class="editor__btn" data-operation="justifyRight">
+            <i class="fa-solid fa-align-right"></i>
+          </button>
+          <button class="editor__btn" data-operation="justifyFull">
+            <i class="fa-solid fa-align-justify"></i>
+          </button>
+          <button class="editor__btn" data-operation="createLink">
+            <i class="fa-solid fa-link"></i>
+          </button>
+          <button class="editor__btn" data-operation="insertImage">
+            <i class="fa-solid fa-image"></i>
+          </button>
+          <input type="file" id="editor__img__selector" accept="image/*" hidden>
+        </div>
+        <div class="editor__content no__content" contenteditable="true">내용을 입력하세요.</div>
+
+      </div>
+      <div class="wallpaper__preview__img">
+        <input id="preview__img__filename" placeholder="미리보기 사진" readonly>
+        <label for="preview__img">파일찾기</label>
+        <input type="file" accept="image/*" id="preview__img" name="preview__img">
+      </div>
+      <div class="wallpaper__operator">
+        <button id="cancel__wallpaper" class="operator__btn">이전</button>
+        <button id="delete__wallpaper" class="operator__btn">삭제</button>
+        <button id="register__wallpaper" class="operator__btn">등록</button>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- 하단 링크 및 정보 -->
+  <footer>
+    <!-- 계정 링크 -->
+    <div class="footer__icons">
+      <a href="#"><i class="fa-regular fa-envelope"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <!-- 홈페이지 정보 -->
+    <div class="footer__info">
+      <div class="info__links">
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+      </div>
+      <span class="copyrights">ⓒ2022.TotalOri.All right reserved</span>
+    </div>
+  </footer>
+</body>
+
+</html>
