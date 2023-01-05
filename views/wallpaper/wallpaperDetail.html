@@ -9,9 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="contactInfo.css">
+  <link rel="stylesheet" href="wallpaperDetail.css">
   <script src="https://kit.fontawesome.com/ba2b096987.js" crossorigin="anonymous"></script>
   <script src="/includes/header.js" defer></script>
+  <script src="wallpaperDetail.js" defer></script>
 </head>
 
 <body>
@@ -24,54 +25,46 @@
     <!-- 네비게이션 메뉴 -->
     <ul class="header__menu">
       <li class="menu__close"><i class="fa-solid fa-x"></i></li>
-      <li><a href="/wallpaper/wallpaperBoard.html">wallpaper</a></li>
-      <li><a href="/contact/contactInfo.html">contact</a></li>
+      <li><a href="/views/wallpaper/wallpaperBoard.html">wallpaper</a></li>
+      <li><a href="/views/contact/contactInfo.html">contact</a></li>
+      <li><a href="/views/admin/adminManage.html">admin</a></li>
     </ul>
     <!-- 우측 아이콘 -->
     <div class="header__icons">
-      <a href="#">
+      <!-- <a href="#">
         <i class="fa-solid fa-user"></i>
-      </a>
+      </a> -->
       <i class="fa-solid fa-bars"></i>
     </div>
   </header>
 
   <div class="page__description">
-    <h2 class="page__title">contact</h2>
+    <h2 class="page__title">wallpaper</h2>
   </div>
   <main>
-    <div class="main__introduce">
-      <p>
-        안녕하세요.
-        <br />오리의 모든 것, 토끼 탈을 쓴 오리, 토탈오리 입니다.
-        <br />협업문의는 아래 이메일 혹은, 인스타그램 디엠을 통해 보내주세요.
-      </p>
+    <!-- TODO: DB 연결 후 내용 구성 채워지면 만들기 -->
+    <div class="main__title"></div>
+    <div class="main__content"></div>
+    <div class="main__control">
+      <a href="" class="prev__content"></a>
+      <a href="" class="to__content__list"></a>
+      <a href="" class="next__content"></a>
     </div>
-    <ul class="main__links">
-      <li class="main_link__list">
-        <i class="fa-regular fa-envelope"></i> E-mail:
-        <a href="mailto:tkdgh3050@gmail.com">tkdgh3050@gmail.com</a>
-      </li>
-      <li class="main_link__list">
-        <i class="fa-brands fa-instagram"></i> Instagram:
-        <a href="https://www.instagram.com/total_ori/">@total_ori</a>
-      </li>
-    </ul>
   </main>
 
   <!-- 하단 링크 및 정보 -->
   <footer>
     <!-- 계정 링크 -->
     <div class="footer__icons">
-      <a href="#"><i class="fa-regular fa-envelope"></i></a>
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="mailto:totalori.official@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+      <a href="https://www.instagram.com/total_ori/"><i class="fa-brands fa-instagram"></i></a>
     </div>
     <!-- 홈페이지 정보 -->
     <div class="footer__info">
-      <div class="info__links">
+      <!-- <div class="info__links">
         <a href="#">이용약관</a>
         <a href="#">개인정보처리방침</a>
-      </div>
+      </div> -->
       <span class="copyrights">ⓒ2022.TotalOri.All right reserved</span>
     </div>
   </footer>
