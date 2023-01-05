@@ -1,0 +1,33 @@
+@import url(/includes/root.css);
+@import url(/includes/header.css);
+@import url(/includes/footer.css);
+@import url(/includes/pageDescription.css);
+
+main {
+  padding: var(--padding);
+}
+
+main #form__login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main #form__login * {
+  margin-bottom: calc(var(--padding) / 2);
+  min-width: 200px;
+  max-width: 400px;
+  width: 50vw;
+  height: 30px;
+  font-size: var(--medium-font);
+}
+
+main #form__login #login__btn {
+  border: 1px solid var(--grey-dark-color);
+  background-color: var(--grey-light-color);
+  transition: background-color 0.2s;
+}
+
+main #form__login #login__btn:hover {
+  background-color: var(--pink-color);
+}
