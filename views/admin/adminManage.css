@@ -1,0 +1,106 @@
+@import url(/includes/root.css);
+@import url(/includes/header.css);
+@import url(/includes/footer.css);
+@import url(/includes/pageDescription.css);
+
+main {
+  padding: var(--padding);
+}
+main .section__title {
+  margin-bottom: 0;
+}
+main .section__content {
+  border: 1px solid var(--grey-dark-color);
+  padding: calc(var(--padding) / 2);
+}
+
+main .manage__main .section__content .file__upload {
+  display: flex;
+}
+
+main .manage__main .section__content .file__upload #main__img__filename {
+  width: 100%;
+  outline: none;
+}
+
+main .manage__main .section__content .file__upload label {
+  font-size: var(--small-font);
+  width: 100px;
+  background-color: var(--grey-light-color);
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: calc(var(--padding) / 2);
+  transition: background-color 0.1s;
+  border: 1px solid var(--grey-dark-color);
+}
+
+main .manage__main .section__content .file__upload label:hover {
+  background-color: var(--grey-dark-color);
+}
+
+main .manage__main .section__content .file__upload #main__img {
+  width: 0;
+  height: 0;
+}
+
+main .manage__contact .section__content .contact__texteditor {
+  border: 1px solid var(--grey-dark-color);
+}
+
+main .manage__contact .section__content .contact__texteditor .editor__header {
+  background-color: var(--grey-light-color);
+  padding: calc(var(--padding) / 2);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main .manage__contact .section__content .contact__texteditor .editor__header .editor__btn {
+  border: 0;
+  cursor: pointer;
+  width: var(--large-font);
+  height: var(--large-font);
+  background-color: var(--grey-light-color);
+}
+
+main .manage__contact .section__content .contact__texteditor .editor__header .editor__btn:hover {
+  color: var(--blue-color);
+}
+
+main .manage__contact .section__content .contact__texteditor .editor__content {
+  outline: none;
+  padding: var(--padding);
+  min-height: 60vh;
+}
+
+main .manage__contact .section__content .contact__texteditor .editor__content img {
+  max-width: 100%;
+}
+
+main .manage__contact .section__content .contact__texteditor .editor__content.no__content {
+  color: var(--grey-dark-color);
+}
+
+main .file__operator,
+main .contact__operator {
+  padding-top: calc(var(--padding) / 2);
+  display: flex;
+  justify-content: flex-end;
+}
+
+main .manage__button {
+  height: 30px;
+  width: 80px;
+  font-size: var(--small-font);
+  background-color: var(--grey-light-color);
+  border: 1px solid var(--grey-dark-color);
+  transition: background-color 0.2s, color 0.2s;
+  font-weight: bold;
+  color: var(--blue-color);
+}
+
+main .manage__button:hover {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}

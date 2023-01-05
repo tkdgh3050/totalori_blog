@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TotalOri - 토끼 탈을 쓴 오리</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="adminManage.css">
+  <script src="https://kit.fontawesome.com/ba2b096987.js" crossorigin="anonymous"></script>
+  <script src="/includes/header.js" defer></script>
+  <script src="adminManage.js" defer></script>
+</head>
+
+<body>
+  <!-- 헤더 네비게이션 바 -->
+  <header>
+    <!-- 로고 -->
+    <div class="header__logo">
+      <a href="/"><img src="/image/totalori_logo.png" alt="totalori logo" class="logo"></a>
+    </div>
+    <!-- 네비게이션 메뉴 -->
+    <ul class="header__menu">
+      <li class="menu__close"><i class="fa-solid fa-x"></i></li>
+      <li><a href="/views/wallpaper/wallpaperBoard.html">wallpaper</a></li>
+      <li><a href="/views/contact/contactInfo.html">contact</a></li>
+      <li><a href="/views/admin/adminManage.html">admin</a></li>
+    </ul>
+    <!-- 우측 아이콘 -->
+    <div class="header__icons">
+      <!-- <a href="#">
+        <i class="fa-solid fa-user"></i>
+      </a> -->
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </header>
+
+  <div class="page__description">
+    <h2 class="page__title">admin</h2>
+  </div>
+  <main>
+    <section class="manage__main">
+      <h3 class="section__title">메인페이지 사진 변경</h3>
+      <div class="section__content">
+        <form action="" id="form__main">
+          <div class="file__upload">
+            <input id="main__img__filename" placeholder="메인페이지 사진" readonly>
+            <label for="main__img">파일찾기</label>
+            <input type="file" accept="image/*" id="main__img" name="main__img">
+          </div>
+          <div class="file__operator">
+            <button id="file__button" class="manage__button">사진변경</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="manage__contact">
+      <h3 class="section__title">소개글 변경</h3>
+      <div class="section__content">
+        <form action="" id="form__contact">
+          <div class="contact__texteditor">
+            <div class="editor__header">
+              <button class="editor__btn" type='button' data-operation="bold">
+                <i class="fa-solid fa-bold"></i>
+              </button>
+              <button class="editor__btn" type='button' data-operation="italic">
+                <i class="fa-solid fa-italic"></i>
+              </button>
+              <button class="editor__btn" type='button' data-operation="underline">
+                <i class="fa-solid fa-underline"></i>
+              </button>
+              <button class="editor__btn" type='button' data-operation="insertUnorderedList">
+                <i class="fa-solid fa-list-ul"></i>
+              </button>
+              <button class="editor__btn" type='button' data-operation="insertOrderedList">
+                <i class="fa-solid fa-list-ol"></i>
+              </button>
+              <button class="editor__btn" type='button' data-operation="insertHorizontalRule">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <button class="editor__btn" type='button' data-operation="justifyLeft">
+                <i class="fa-solid fa-align-left"></i>
+              </button>
+              <button class="editor__btn" type='button' data-operation="justifyCenter">
+                <i class="fa-solid fa-align-center"></i>
+              </button>
+              <button class="editor__btn" type='button' data-operation="justifyRight">
+                <i class="fa-solid fa-align-right"></i>
+              </button>
+              <button class="editor__btn" type='button' data-operation="justifyFull">
+                <i class="fa-solid fa-align-justify"></i>
+              </button>
+              <button class="editor__btn" type='button' data-operation="createLink">
+                <i class="fa-solid fa-link"></i>
+              </button>
+              <button class="editor__btn" type='button' data-operation="insertImage">
+                <i class="fa-solid fa-image"></i>
+              </button>
+              <input type="file" id="editor__img__selector" accept="image/*" hidden>
+            </div>
+            <div class="editor__content no__content" contenteditable="true">내용을 입력하세요.</div>
+          </div>
+          <div class="contact__operator">
+            <button id="contact__button" class="manage__button">소개변경</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단 링크 및 정보 -->
+  <footer>
+    <!-- 계정 링크 -->
+    <div class="footer__icons">
+      <a href="mailto:totalori.official@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+      <a href="https://www.instagram.com/total_ori/"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <!-- 홈페이지 정보 -->
+    <div class="footer__info">
+      <!-- <div class="info__links">
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+      </div> -->
+      <span class="copyrights">ⓒ2022.TotalOri.All right reserved</span>
+    </div>
+  </footer>
+</body>
+
+</html>
