@@ -11,7 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="contactInfo.css">
   <script src="https://kit.fontawesome.com/ba2b096987.js" crossorigin="anonymous"></script>
-  <script src="/includes/header.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js" defer></script>
+  <script type="module" src="/includes/header.js" defer></script>
 </head>
 
 <body>
@@ -24,9 +28,9 @@
     <!-- 네비게이션 메뉴 -->
     <ul class="header__menu">
       <li class="menu__close"><i class="fa-solid fa-x"></i></li>
-      <li><a href="/views/wallpaper/wallpaperBoard.html">wallpaper</a></li>
-      <li><a href="/views/contact/contactInfo.html">contact</a></li>
-      <li><a href="/views/admin/adminManage.html">admin</a></li>
+      <li id="menu__wallpaper"><a href="/views/wallpaper/wallpaperBoard.html">wallpaper</a></li>
+      <li id="menu__contact"><a href="/views/contact/contactInfo.html">contact</a></li>
+      <li id="menu__admin"><a href="/views/admin/adminManage.html">admin</a></li>
     </ul>
     <!-- 우측 아이콘 -->
     <div class="header__icons">
