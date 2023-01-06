@@ -7,6 +7,13 @@ const $email__input = document.querySelector('#email__input');
 const $pw__input = document.querySelector('#pw__input');
 
 // 로직 및 함수 선언
+function checkLogined() {
+  if (document.cookie.includes('userUid')) {
+    //로그인 한 상태면 다시 로그인 하지 못하도록 메인페이지 리다이렉트
+    window.location.href = '/';
+  }
+}
+
 const checkValidate = (e) => {
   e.preventDefault();
   if ($email__input.value && $pw__input.value) {
@@ -48,4 +55,5 @@ const setCookies = (cookieName, cookieValue, days) => {
 }
 
 // 이벤트 리스너
+window.addEventListener('DOMContentLoaded',checkLogined);
 $login__btn.addEventListener('click',checkValidate);

@@ -14,6 +14,12 @@ const $main__img__fileUrl = document.querySelector('#main__img__fileUrl');
 
 // 로직 및 함수 선언
 function loadContact() {
+  if (!document.cookie.includes('userUid')) {
+    //로그인 안 한 상태면 접근 하지 못하도록 메인페이지 리다이렉트
+    window.location.href = '/';
+    return;
+  }
+
   db.collection('contact').doc('article').get()
     .then((doc) => {
       $editor__content.innerHTML = doc.data().innerHTML;
