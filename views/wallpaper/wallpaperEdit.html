@@ -95,13 +95,14 @@
       </div>
       <div class="wallpaper__preview__img">
         <input id="preview__img__filename" placeholder="미리보기 사진" readonly>
+        <input id="preview__img__fileUrl" hidden>
         <label for="preview__img">파일찾기</label>
         <input type="file" accept="image/*" id="preview__img" name="preview__img">
       </div>
       <div class="wallpaper__operator">
-        <button id="cancel__wallpaper" class="operator__btn">이전</button>
-        <button id="delete__wallpaper" class="operator__btn">삭제</button>
-        <button id="register__wallpaper" class="operator__btn">등록</button>
+        <button type="button" id="cancel__wallpaper" class="operator__btn">이전</button>
+        <!-- <button type="button" id="delete__wallpaper" class="operator__btn">삭제</button> -->
+        <button type="button" id="register__wallpaper" class="operator__btn">등록</button>
       </div>
 
     </form>

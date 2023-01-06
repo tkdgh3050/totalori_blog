@@ -11,6 +11,7 @@ const $file__button = document.querySelector('#file__button');
 const $contact__button = document.querySelector('#contact__button');
 const $main__img__filename = document.querySelector('#main__img__filename');
 const $main__img__fileUrl = document.querySelector('#main__img__fileUrl');
+let modalFlag = false;
 
 // 로직 및 함수 선언
 function loadContact() {
@@ -33,6 +34,9 @@ $editor__btn.forEach(btn => {
   btn.addEventListener('click', (e) => {
     let command = btn.dataset.operation
 
+    if (modalFlag) return;
+    modalFlag = true;
+
     if ('createLink' === command) {
       //링크를 삽입하는 경우
       const linkInput = prompt('링크를 입력해주세요.','https://');
@@ -42,6 +46,7 @@ $editor__btn.forEach(btn => {
       document.execCommand(command, false, null);
     }
   })
+  modalFlag = false;
 });
 
 const getDateString = () => {
