@@ -2,3 +2,83 @@
 @import url(/includes/header.css);
 @import url(/includes/footer.css);
 @import url(/includes/pageDescription.css);
+
+main {
+  padding: var(--padding);
+  display: flex;
+  flex-direction: column;
+}
+
+main .wallpaper__edit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+main .wallpaper__edit .edit__btn {
+  margin-left: calc(var(--padding) / 2);
+  height: 30px;
+  width: 60px;
+  font-size: var(--small-font);
+  background-color: var(--grey-light-color);
+  border: 1px solid var(--grey-dark-color);
+  transition: background-color 0.2s;
+  font-weight: bold;
+}
+
+main .wallpaper__edit #modify__btn {
+  color: var(--blue-color);
+}
+
+main .wallpaper__edit #modify__btn:hover {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}
+
+main .wallpaper__edit #delete__btn {
+  color: var(--red-color);
+}
+
+main .wallpaper__edit #delete__btn:hover {
+  background-color: var(--red-color);
+  color: var(--white-color);
+}
+
+main .wallpaper__title {
+  font-size: var(--x-large-font);
+}
+
+main .wallpaper__create__date {
+  font-size: var(--small-font);
+  color: var(--grey-dark-color);
+  margin-bottom: var(--padding);
+  /* border-bottom: 1px solid; */
+}
+
+main .wallpaper__content {
+  margin-bottom: var(--padding);
+}
+
+main .wallpaper__content img {
+  max-width: 100%;
+}
+
+main .wallpaper__operator {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+main .wallpaper__operator .operator__btn {
+  border-top: 1px solid var(--grey-dark-color);
+  border-bottom: 1px solid var(--grey-dark-color);
+  padding: calc(var(--padding) / 2);
+  transition: background-color 0.2s;
+}
+
+main .wallpaper__operator .operator__btn:hover {
+  background-color: var(--pink-color);
+}
+
+main .wallpaper__operator .operator__btn .fa-solid {
+  padding-right: var(--padding);
+}
