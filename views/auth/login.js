@@ -7,12 +7,6 @@ const $email__input = document.querySelector('#email__input');
 const $pw__input = document.querySelector('#pw__input');
 
 // 로직 및 함수 선언
-db.collection('user').get().then((results) => {
-  results.forEach(result => {
-    console.log(result.data());
-  });
-});
-
 const checkValidate = (e) => {
   e.preventDefault();
   if ($email__input.value && $pw__input.value) {

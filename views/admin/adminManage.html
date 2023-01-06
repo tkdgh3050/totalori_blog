@@ -49,14 +49,15 @@
     <section class="manage__main">
       <h3 class="section__title">메인페이지 사진 변경</h3>
       <div class="section__content">
-        <form action="" id="form__main">
+        <form id="form__main">
           <div class="file__upload">
             <input id="main__img__filename" placeholder="메인페이지 사진" readonly>
+            <input id="main__img__fileUrl" hidden>
             <label for="main__img">파일찾기</label>
             <input type="file" accept="image/*" id="main__img" name="main__img">
           </div>
           <div class="file__operator">
-            <button id="file__button" class="manage__button">사진변경</button>
+            <button type="button" id="file__button" class="manage__button">사진변경</button>
           </div>
         </form>
       </div>
@@ -108,7 +109,7 @@
             <div class="editor__content no__content" contenteditable="true">내용을 입력하세요.</div>
           </div>
           <div class="contact__operator">
-            <button id="contact__button" class="manage__button">소개변경</button>
+            <button type="button" id="contact__button" class="manage__button">소개변경</button>
           </div>
         </form>
       </div>

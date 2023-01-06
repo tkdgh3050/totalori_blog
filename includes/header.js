@@ -8,7 +8,7 @@ const $header__menu = document.querySelector('header .header__menu');
 const $menu__close = document.querySelector('header .header__menu .menu__close .fa-x');
 
 // 로직 및 함수 선언
-(() => {
+function checkAdmin() {
   const $menu__admin = document.querySelector('#menu__admin');
   if (document.cookie.includes('userUid')) {
     if (!$menu__admin) {
@@ -25,12 +25,13 @@ const $menu__close = document.querySelector('header .header__menu .menu__close .
       $menu__admin.remove();
     }
   }
-})();
+};
 
 const onClickSideToggle = () => {
   $header__menu.classList.toggle('clicked');
 }
 
 // 이벤트 리스너
+window.addEventListener('DOMContentLoaded',checkAdmin)
 $sideToggle.addEventListener('click',onClickSideToggle);
 $menu__close.addEventListener('click',onClickSideToggle);
