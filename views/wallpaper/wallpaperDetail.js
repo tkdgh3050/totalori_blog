@@ -10,6 +10,10 @@ let postId = null;
 // 로직 및 함수 선언
 function onPageLoad() {
   const urlSearch = new URLSearchParams(location.search);
+  if (!urlSearch.has('postId')) {
+    window.location.href = '/views/wallpaper/wallpaperBoard.html';
+    return;
+  }
   postId = urlSearch.get('postId');
 
   db.collection('wallpaper').doc(postId).get()

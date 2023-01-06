@@ -3,6 +3,27 @@
 @import url(/includes/footer.css);
 @import url(/includes/pageDescription.css);
 
+main .wallpaper__write {
+  padding: 0 var(--padding);
+  display: flex;
+  justify-content: flex-end;
+}
+
+main .wallpaper__write #write__btn {
+  margin-right: calc(var(--padding) / 2);
+  height: 30px;
+  width: 60px;
+  font-size: var(--small-font);
+  background-color: var(--grey-light-color);
+  border: 1px solid var(--grey-dark-color);
+  transition: background-color 0.2s;
+  font-weight: bold;
+}
+
+main .wallpaper__write #write__btn:hover {
+  background-color: var(--pink-color);
+}
+
 main .wallpaper__container {
   display: flex;
   flex-wrap: wrap;
@@ -10,10 +31,10 @@ main .wallpaper__container {
 }
 
 main .wallpaper__container .wallpaper__item {
-  width: calc(33vw - var(--padding) * 1.9);
+  width: calc(100% / 3 - var(--padding));
+  margin: calc(var(--padding) / 2);
   border: 1px solid var(--grey-light-color);
   box-shadow: 0 2px 4px 0 var(--grey-dark-color);
-  margin: calc(var(--padding) / 2);
 }
 
 main .wallpaper__container .wallpaper__item:hover {
@@ -41,7 +62,7 @@ main .wallpaper__container .wallpaper__item .post__content .post__info {
   justify-content: space-between;
 }
 
-main .wallpaper__container .wallpaper__item .post__content .post__info .post_date {
+main .wallpaper__container .wallpaper__item .post__content .post__info .post__date {
   font-size: min(2.5vw, var(--small-font));
   color: var(--grey-dark-color);
 }
@@ -53,6 +74,6 @@ main .wallpaper__container .wallpaper__item .post__content .post__info .post__vi
 
 @media screen and (max-width: 768px) {
   main .wallpaper__container .wallpaper__item {
-    width: calc(50vw - var(--padding) * 2.5);
+    width: calc(100% / 2 - var(--padding));
   }
 }
