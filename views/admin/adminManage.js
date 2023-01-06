@@ -13,14 +13,21 @@ const $main__img__filename = document.querySelector('#main__img__filename');
 const $main__img__fileUrl = document.querySelector('#main__img__fileUrl');
 
 // 로직 및 함수 선언
+function loadContact() {
+  db.collection('contact').doc('article').get()
+    .then((doc) => {
+      $editor__content.innerHTML = doc.data().innerHTML;
+    })
+    .catch((err) => {
+      alert(err.code);
+    })
+}
+
 $editor__btn.forEach(btn => {
   btn.addEventListener('click', (e) => {
     let command = btn.dataset.operation
 
-    if ('insertImage' === command) {
-      //이미지를 삽입하는 경우
-      $editor__img__selector.click();
-    } else if ('createLink' === command) {
+    if ('createLink' === command) {
       //링크를 삽입하는 경우
       const linkInput = prompt('링크를 입력해주세요.','https://');
       document.execCommand(command, false, linkInput);
@@ -44,22 +51,6 @@ const getDateString = () => {
     + padZero(date.getMinutes())
     + padZero(date.getSeconds())
   );
-}
-
-const imageSelect = (e) => {
-  const file = e.target.files;
-  if (file) {
-    imageInsert(file[0]);
-  }
-}
-
-const imageInsert = (file) => {
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = function (e) {
-    //reader 가 파일을 정상적으로 읽어온 경우 에디터에 그림 삽입
-    document.execCommand('insertImage', false, `${reader.result}`)
-  };
 }
 
 const isContentFocus = (e) => {
@@ -118,11 +109,27 @@ const onClickFileSaveBtn = (e) => {
 }
 
 const onClickContactSaveBtn = (e) => {
-
+  if ($editor__content.classList.contains('no__content')) {
+    //소개글을 작성하지 않은 경우 return
+    alert('소개글을 작성해주세요.');
+    return;
+  }
+  const param = {
+    innerHTML: $editor__content.innerHTML,
+    createDate: new Date(),
+  }
+  db.collection('contact').doc('article').set(param)
+  .then((_) => {
+    alert('소개글 변경을 완료하였습니다.');
+    window.location.reload();
+  })
+  .catch((err) => {
+    alert(err.code);
+  })
 }
 
 // 이벤트 리스너
-$editor__img__selector.addEventListener('change',imageSelect);
+window.addEventListener('DOMContentLoaded',loadContact);
 $editor__content.addEventListener('focus',isContentFocus);
 $editor__content.addEventListener('blur',isContentBlur);
 $main__img.addEventListener('change',uploadMainImage);
