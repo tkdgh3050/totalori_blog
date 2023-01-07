@@ -44,6 +44,8 @@ main .wallpaper__container .wallpaper__item:hover {
 
 main .wallpaper__container .wallpaper__item .post__image__preview img {
   width: 100%;
+  height: 25vh;
+  object-fit: contain;
   border-bottom: 1px solid var(--grey-light-color);
 }
 
