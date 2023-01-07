@@ -5,11 +5,13 @@ const $wallpaper__write = document.querySelector('.wallpaper__write');
 
 // 로직 및 함수 선언
 function onPageLoad() {
+  //페이지 로딩할 때 실행하는 함수
   if (document.cookie.includes('userUid')) {
     //admin 의 경우 글쓰기 버튼 보이게
     addWriteBtn();
   }
 
+  //전체 게시글 불러오는 로직
   db.collection('wallpaper').get()
     .then((querySnapshot) => {
       if (querySnapshot.docs[0]) {
@@ -26,6 +28,7 @@ function onPageLoad() {
 }
 
 const getDateString = (date) => {
+  //날짜 형식 맞춰주는 함수
   function padZero(num) {
     return num < 10 ? '0' + num : num;
   }
@@ -39,6 +42,7 @@ const getDateString = (date) => {
 }
 
 const addItem = (postId, data) => {
+  //아이템 태그 생성하고 추가하는 로직
   const wallpaper__item = document.createElement('div');
   const post__image__preview = document.createElement('div');
   const imgTag = document.createElement('img');
@@ -71,11 +75,13 @@ const addItem = (postId, data) => {
 }
 
 const onClickWallpaper = (e) => {
+  //게시글 하나 클릭 시 해당 게시글로 이동
   const postId = e.currentTarget.dataset.postid;
   document.location.href = `/views/wallpaper/wallpaperDetail.html?postId=${postId}`; 
 }
 
 const addWriteBtn = () => {
+  //관리자일 경우 글쓰기 버튼 추가하는 로직
   const btn = document.createElement('button');
   btn.id = 'write__btn';
   btn.textContent = '글쓰기';
@@ -84,6 +90,7 @@ const addWriteBtn = () => {
 }
 
 const onClickWriteBtn = (e) => {
+  //글쓰기 클릭 시 이동
   document.location.href = `/views/wallpaper/wallpaperEdit.html`; 
 }
 

@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TotalOri - 토끼 탈을 쓴 오리</title>
+  <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
@@ -46,20 +47,16 @@
     <h2 class="page__title">wallpaper</h2>
   </div>
   <main>
+    <!-- 수정 및 삭제 버튼 -->
     <div class="wallpaper__edit"></div>
+    <!-- 제목 -->
     <div class="wallpaper__title"></div>
+    <!-- 생성날짜 -->
     <div class="wallpaper__create__date"></div>
-    <div class="wallpaper__content"></div>
-    <div class="wallpaper__operator">
-      <!-- <a class='operator__btn'>
-        <i class="fa-solid fa-chevron-up"></i>
-        <span id="prev__content__title" data-postId="">이전글제목</span>
-      </a>
-      <a class='operator__btn'>
-        <i class="fa-solid fa-chevron-down"></i>
-        <span id="next__content__title" data-postId="">다음글제목</span>
-      </a> -->
-    </div>
+    <!-- 텍스트편집기 -->
+    <div class="wallpaper__content editor__content"></div>
+    <!-- 이전글, 다음글 -->
+    <div class="wallpaper__operator"></div>
   </main>
 
   <!-- 하단 링크 및 정보 -->

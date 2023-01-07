@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TotalOri - 토끼 탈을 쓴 오리</title>
+  <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
@@ -47,9 +48,11 @@
   </div>
   <main>
     <form id="wallpaper__form">
+      <!-- 제목 -->
       <div class="wallpaper__title">
         <input type="text" id="title" name="title" placeholder="제목을 입력해 주세요.">
       </div>
+      <!-- 텍스트 에디터 -->
       <div class="wallpaper__texteditor">
         <div class="editor__header">
           <button class="editor__btn" type='button' data-operation="bold">
@@ -91,20 +94,19 @@
           <input type="file" id="editor__img__selector" accept="image/*" hidden>
         </div>
         <div class="editor__content no__content" contenteditable="true">내용을 입력하세요.</div>
-
       </div>
+      <!-- 미리보기 사진 업로드 -->
       <div class="wallpaper__preview__img">
         <input id="preview__img__filename" placeholder="미리보기 사진" readonly>
         <input id="preview__img__fileUrl" hidden>
         <label for="preview__img">파일찾기</label>
         <input type="file" accept="image/*" id="preview__img" name="preview__img">
       </div>
+      <!-- 동작 부분 -->
       <div class="wallpaper__operator">
         <button type="button" id="cancel__wallpaper" class="operator__btn">이전</button>
-        <!-- <button type="button" id="delete__wallpaper" class="operator__btn">삭제</button> -->
         <button type="button" id="register__wallpaper" class="operator__btn">등록</button>
       </div>
-
     </form>
   </main>
 

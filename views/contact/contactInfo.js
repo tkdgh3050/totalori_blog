@@ -4,6 +4,7 @@ $main__introduce = document.querySelector('.main__introduce');
 
 // 로직 및 함수 선언
 function loadContact() {
+  //기존 소개글 불러오기
   db.collection('contact').doc('article').get()
     .then((doc) => {
       $main__introduce.innerHTML = doc.data().innerHTML;

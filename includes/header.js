@@ -9,6 +9,7 @@ const $menu__close = document.querySelector('header .header__menu .menu__close .
 
 // 로직 및 함수 선언
 function checkAdmin() {
+  //관리자일 경우만 admin이 보이도록 추가하는 로직
   const $menu__admin = document.querySelector('#menu__admin');
   if (document.cookie.includes('userUid')) {
     if (!$menu__admin) {
@@ -28,6 +29,7 @@ function checkAdmin() {
 };
 
 const onClickSideToggle = () => {
+  //사이드토글 눌렀을 시
   $header__menu.classList.toggle('clicked');
 }
 

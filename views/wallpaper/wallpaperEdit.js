@@ -31,6 +31,7 @@ function onPageLoad() {
 }
 
 const getDateString = () => {
+  //파일명 중복 방지를 위한 오늘 날짜 구하는 함수
   function padZero(num) {
     return num < 10 ? '0' + num : num;
   }
@@ -46,6 +47,7 @@ const getDateString = () => {
 }
 
 const isNewOrEdit = () => {
+  //글쓰기 인지 글수정 인지 구분 + 글 수정일 경우 파라미터 값 읽어오기
   const urlSearch = new URLSearchParams(location.search);
   if (urlSearch.has('postId')) {
     isNew = false;
@@ -54,6 +56,7 @@ const isNewOrEdit = () => {
 }
 
 const loadContent = () => {
+  //수정일 경우 기존 값 불러오기
   db.collection('wallpaper').doc(postId).get()
     .then((doc) => {
       const data = doc.data();
@@ -69,6 +72,7 @@ const loadContent = () => {
 }
 
 const renderDeleteLogic = () => {
+  //수정일 경우 삭제 버튼 만들기
   const btnTag = document.createElement('button');
   btnTag.type = 'button';
   btnTag.id = 'delete__wallpaper';
@@ -80,6 +84,7 @@ const renderDeleteLogic = () => {
 }
 
 $editor__btn.forEach(btn => {
+  //에디터 헤더부분 이벤트 추가
   btn.addEventListener('click', (e) => {
     let command = btn.dataset.operation
 
@@ -100,6 +105,7 @@ $editor__btn.forEach(btn => {
 });
 
 const imageSelect = (e) => {
+  //에디터 내부에서 이미지 등록 시 스토리지에 업로드하는 로직
   const file = e.target.files[0];
   const fileName = getDateString()+ "_" + file.name;
   const storageImgMain = storageRef.child('image/wallpaper/content/' + fileName);
@@ -119,6 +125,7 @@ const imageSelect = (e) => {
 }
 
 const isContentFocus = (e) => {
+  //에디터 클릭 시 글 있으면 없을 시의 서식 지우는 로직
   if (e.target.classList.contains('no__content')) {
     e.target.textContent = '';
     e.target.classList.remove('no__content');
@@ -126,6 +133,7 @@ const isContentFocus = (e) => {
 };
 
 const isContentBlur = (e) => {
+  //에디터 나갈 시 글 없으면 글 없을 시의 서식 넣어주는 로직
   if (e.target.classList.contains('no__content')) return;
   if (e.target.textContent === '') {
     e.target.classList.add('no__content');
@@ -134,6 +142,7 @@ const isContentBlur = (e) => {
 }
 
 const uploadPreviewImage = (e) => {
+  //미리보기 사진 업로드 시 스토리지에 사진 올리는 로직
   const file = e.target.files[0];
   const fileName = getDateString()+ "_" + file.name;
   const storageImgMain = storageRef.child('image/wallpaper/preview/' + fileName);

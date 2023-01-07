@@ -15,12 +15,14 @@ let modalFlag = false;
 
 // 로직 및 함수 선언
 function loadContact() {
+  //기존에 작성한 소개글 불러오는 로직
   if (!document.cookie.includes('userUid')) {
     //로그인 안 한 상태면 접근 하지 못하도록 메인페이지 리다이렉트
     window.location.href = '/';
     return;
   }
 
+  //기존 소개글 불러오기
   db.collection('contact').doc('article').get()
     .then((doc) => {
       $editor__content.innerHTML = doc.data().innerHTML;
@@ -31,6 +33,7 @@ function loadContact() {
 }
 
 $editor__btn.forEach(btn => {
+  //에디터 헤더 버튼 이벤트 추가
   btn.addEventListener('click', (e) => {
     let command = btn.dataset.operation
 
@@ -50,6 +53,7 @@ $editor__btn.forEach(btn => {
 });
 
 const getDateString = () => {
+  //날짜 형식 변경해주는 함수
   function padZero(num) {
     return num < 10 ? '0' + num : num;
   }
@@ -81,10 +85,14 @@ const isContentBlur = (e) => {
 }
 
 const uploadMainImage = (e) => {
+  //메인페이지 이미지 선택 시 스토리지에 저장하는 로직
   const file = e.target.files[0];
+  
   // 메인페이지 이미지 호출 로딩이 오래 걸려 같은 이름의 파일을 올리도록 고정시킴
-  const fileName = 'main_bg.png';//getDateString()+ "_" + file.name;
+  //const fileName = getDateString()+ "_" + file.name;
+  const fileName = 'main_bg.png';
   const storageImgMain = storageRef.child('image/main/' + fileName);
+  
   storageImgMain.put(file) //fireStorage 에 파일 업로드
     .then((snapshot) => {
       snapshot.ref.getDownloadURL()
@@ -99,6 +107,7 @@ const uploadMainImage = (e) => {
 }
 
 const onClickFileSaveBtn = (e) => {
+  // 메인페이지 사진 변경한 것을 디비에 저장하는 로직
   if (!$main__img__filename.value || !$main__img__fileUrl.value) {
     //파일 선택을 안한 경우
     alert('파일을 선택하세요.');
@@ -120,11 +129,13 @@ const onClickFileSaveBtn = (e) => {
 }
 
 const onClickContactSaveBtn = (e) => {
+  //소개글 저장하는 로직
   if ($editor__content.classList.contains('no__content')) {
     //소개글을 작성하지 않은 경우 return
     alert('소개글을 작성해주세요.');
     return;
   }
+  
   const param = {
     innerHTML: $editor__content.innerHTML,
     createDate: new Date(),
