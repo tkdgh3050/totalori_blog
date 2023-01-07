@@ -12,7 +12,7 @@ function onPageLoad() {
   }
 
   //전체 게시글 불러오는 로직
-  db.collection('wallpaper').get()
+  db.collection('wallpaper').orderBy('createDate').get()
     .then((querySnapshot) => {
       if (querySnapshot.docs[0]) {
         querySnapshot.forEach((doc) => {
