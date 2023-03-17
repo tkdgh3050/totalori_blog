@@ -12,7 +12,7 @@ function onPageLoad() {
   }
 
   //전체 게시글 불러오는 로직
-  db.collection('wallpaper').orderBy('createDate').get()
+  db.collection('wallpaper').orderBy('createDate', 'desc').get()
     .then((querySnapshot) => {
       if (querySnapshot.docs[0]) {
         querySnapshot.forEach((doc) => {
@@ -32,8 +32,8 @@ const getDateString = (date) => {
   function padZero(num) {
     return num < 10 ? '0' + num : num;
   }
-  return(
-    date.getFullYear().toString() 
+  return (
+    date.getFullYear().toString()
     + '-'
     + padZero(date.getMonth() + 1)
     + '-'
@@ -50,15 +50,15 @@ const addItem = (postId, data) => {
   const post__title = document.createElement('div');
   const post__info = document.createElement('div');
   const post__date = document.createElement('div');
-  
+
   wallpaper__item.className = 'wallpaper__item';
   post__image__preview.className = 'post__image__preview';
   post__content.className = 'post__content';
   post__title.className = 'post__title';
   post__info.className = 'post__info';
   post__date.className = 'post__date';
-  
-  wallpaper__item.setAttribute('data-postid',postId);
+
+  wallpaper__item.setAttribute('data-postid', postId);
   imgTag.src = data.previewImgURL;
   imgTag.alt = data.title;
   post__title.textContent = data.title;
@@ -70,14 +70,14 @@ const addItem = (postId, data) => {
   post__content.appendChild(post__info);
   wallpaper__item.appendChild(post__image__preview);
   wallpaper__item.appendChild(post__content);
-  wallpaper__item.addEventListener('click',onClickWallpaper);
+  wallpaper__item.addEventListener('click', onClickWallpaper);
   $wallpaper__container.appendChild(wallpaper__item);
 }
 
 const onClickWallpaper = (e) => {
   //게시글 하나 클릭 시 해당 게시글로 이동
   const postId = e.currentTarget.dataset.postid;
-  document.location.href = `/views/wallpaper/wallpaperDetail.html?postId=${postId}`; 
+  document.location.href = `/views/wallpaper/wallpaperDetail.html?postId=${postId}`;
 }
 
 const addWriteBtn = () => {
@@ -91,7 +91,7 @@ const addWriteBtn = () => {
 
 const onClickWriteBtn = (e) => {
   //글쓰기 클릭 시 이동
-  document.location.href = `/views/wallpaper/wallpaperEdit.html`; 
+  document.location.href = `/views/wallpaper/wallpaperEdit.html`;
 }
 
 // 이벤트 리스너
