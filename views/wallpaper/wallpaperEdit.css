@@ -49,7 +49,7 @@ main .wallpaper__texteditor .editor__content {
 }
 
 main .wallpaper__texteditor .editor__content img {
-  max-width: 100%;
+  max-width: 50%;
 }
 
 main .wallpaper__texteditor .editor__content.no__content {
