@@ -33,30 +33,30 @@ function onPageLoad() {
       $wallpaper__title.textContent = data.title;
       $wallpaper__create__date.textContent = getDateString(createDate);
       $wallpaper__content.innerHTML = data.contentHTML;
-      
-      //이전 글 가져오기
-      db.collection('wallpaper').where('createDate', "<", data.createDate).orderBy('createDate','desc').limit(1).get()
+
+      //다음 글 가져오기
+      db.collection('wallpaper').where('createDate', ">", data.createDate).limit(1).get()
         .then((doc) => {
-          if(doc.docs[0]) {
+          if (doc.docs[0]) {
             const postId = doc.docs[0].id;
             appendOperator('prev', postId, doc.docs[0].data().title);
           }
         });
-      
-        //다음 글 가져오기
-      db.collection('wallpaper').where('createDate', ">", data.createDate).limit(1).get()
-      .then((doc) => {
-        if(doc.docs[0]) {
-          const postId = doc.docs[0].id;
-          appendOperator('next', postId, doc.docs[0].data().title);
-        }
-      });
+
+      //이전 글 가져오기
+      db.collection('wallpaper').where('createDate', "<", data.createDate).orderBy('createDate', 'desc').limit(1).get()
+        .then((doc) => {
+          if (doc.docs[0]) {
+            const postId = doc.docs[0].id;
+            appendOperator('next', postId, doc.docs[0].data().title);
+          }
+        });
     })
 
   // admin 의 경우 수정,삭제 버튼 추가
   if (document.cookie.includes('userUid')) {
-    appendEditBtn('modify__btn','수정');
-    appendEditBtn('delete__btn','삭제');
+    appendEditBtn('modify__btn', '수정');
+    appendEditBtn('delete__btn', '삭제');
     addEventBtn();
   }
 }
@@ -66,8 +66,8 @@ const getDateString = (date) => {
   function padZero(num) {
     return num < 10 ? '0' + num : num;
   }
-  return(
-    date.getFullYear().toString() 
+  return (
+    date.getFullYear().toString()
     + '-'
     + padZero(date.getMonth() + 1)
     + '-'
