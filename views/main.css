@@ -8,5 +8,6 @@ main .main__img {
 }
 
 main .main__img img {
-  width: 100%;
+  object-fit: contain;
+  max-height: 70vh;
 }
