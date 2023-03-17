@@ -59,7 +59,7 @@ main .wallpaper__content {
 }
 
 main .wallpaper__content img {
-  max-width: 100%;
+  max-width: 50%;
 }
 
 main .wallpaper__operator {
